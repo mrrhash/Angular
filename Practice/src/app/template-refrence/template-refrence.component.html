@@ -1,0 +1,31 @@
+<!-- <input  type="text" #nameBox placeholder="Enter your Name" name="myName"/>
+<input type="button" value="click" (click) = "getName(nameBox.value)" />
+
+<h1>{{display_Name}}</h1> -->
+<!-- 
+<input  type="text" (keyup)="getName(nameBox.value)" #nameBox placeholder="Enter your Name" name="myName"/>
+<h1>{{display_Name}}</h1> -->
+
+<!-- <input  type="text" #nameBox placeholder="Enter your Name" name="myName"/>
+<input type="button" value="click" (click) = "getName(nameBox.placeholder)" />
+
+<h1>{{display_Name}}</h1> -->
+<!-- 
+<input  type="text" #nameBox placeholder="Enter your Name" name="myName"/>
+<input type="button" value="click" (click) = "getName(nameBox)" />
+
+<h1>{{display_Name}}</h1> -->
+
+<!-- <h1 #heading >Hello World!</h1>
+<button (click) = "getHeading(heading.innerHTML)">Click</button> -->
+
+<!-- <input  type="text" #fnameBox placeholder="First Name" name="myName"/>
+<input  type="text" #lnameBox placeholder="Last Name" name="myName"/>
+<input type="button" value="click" (click) = "getName(fnameBox.value,lnameBox.value)" />
+
+<h1>{{display_Name}}</h1> -->
+
+<input  type="text" (keyup) = "getName(fnameBox.value , lnameBox.value)" #fnameBox placeholder="First Name" name="myName"/>
+<input  type="text" (keyup) = "getName(fnameBox.value , lnameBox.value)" #lnameBox placeholder="Last Name" name="myName"/>
+
+<h1>{{display_Name}}</h1>

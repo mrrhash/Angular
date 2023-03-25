@@ -1,0 +1,12 @@
+<p>ng-class-directive works!</p>
+
+<!-- <h2 ngClass="myColor">Never Give Up</h2> -->
+<h2 [ngClass]="'myColor myFont'">Never Give Up</h2>
+<h2 ngClass="myColor myFont">Never Give Up</h2>
+<h2 [ngClass]="{'myColor':condition}">Never Give Up</h2>
+<h2 [ngClass]="{'myColor':condition , 'myFont' : true}">Never Give Up</h2>
+<h2 [ngClass]="['myColor' , 'myFont']">Never Give Up</h2>
+<h2 [ngClass]="{'myColor' : (0<5)}">Never Give Up</h2>
+<h2 [ngClass]="cssClass">Never Give Up</h2>
+<h2 [ngClass]="cssArray">Never Give Up</h2>
+<h2 [ngClass]="obj">Never Give Up</h2>
