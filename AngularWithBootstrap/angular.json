@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Practice": {
+    "AngularWithBootstrap": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/practice",
+            "outputPath": "dist/angular-with-bootstrap",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Practice:build:production"
+              "browserTarget": "AngularWithBootstrap:build:production"
             },
             "development": {
-              "browserTarget": "Practice:build:development"
+              "browserTarget": "AngularWithBootstrap:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Practice:build"
+            "browserTarget": "AngularWithBootstrap:build"
           }
         },
         "test": {
@@ -101,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "044e8d93-5c03-42f2-9770-50eee800029a"
+    "analytics": "05bff5b7-76e6-4bda-8bb2-47897c8c0859"
   }
 }
