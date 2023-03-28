@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Practice';
+  name = "Hassan Raza";
+  colors = ["orange","red","green","yellow"];
+  employee ={name:"ali" , age: "20" , designation:"worker"}
+
+   public changeData(){
+    this.name = "Ali Ahmed";
+  }
 }

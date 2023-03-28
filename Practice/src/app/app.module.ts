@@ -9,6 +9,7 @@ import { TemplateRefrenceComponent } from './template-refrence/template-refrence
 import { CounterComponent } from './counter/counter.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { StructureDirectrivesComponent } from './structure-directrives/structure-directrives.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StructureDirectrivesComponent } from './structure-directrives/structure
     TemplateRefrenceComponent,
     CounterComponent,
     TwoWayBindingComponent,
-    StructureDirectrivesComponent
+    StructureDirectrivesComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
