@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Practice';
-  name = "Hassan Raza";
-  colors = ["orange","red","green","yellow"];
-  employee ={name:"ali" , age: "20" , designation:"worker"}
+  // title = 'Practice';
+  // name = "Hassan Raza";
+  // colors = ["orange","red","green","yellow"];
+  // employee ={name:"ali" , age: "20" , designation:"worker"}
 
-   public changeData(){
-    this.name = "Ali Ahmed";
-  }
+  //  public changeData(){
+  //   this.name = "Ali Ahmed";
+  // }
+
+  msg = "";
 }

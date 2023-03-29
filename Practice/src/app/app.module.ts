@@ -10,6 +10,8 @@ import { CounterComponent } from './counter/counter.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { StructureDirectrivesComponent } from './structure-directrives/structure-directrives.component';
 import { ChildComponent } from './child/child.component';
+import { Child2Component } from './child2/child2.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ChildComponent } from './child/child.component';
     CounterComponent,
     TwoWayBindingComponent,
     StructureDirectrivesComponent,
-    ChildComponent
+    ChildComponent,
+    Child2Component,
+    PipeComponent
   ],
   imports: [
     BrowserModule,

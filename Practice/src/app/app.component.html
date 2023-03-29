@@ -13,4 +13,7 @@
 <!-- Array
   <app-child [colorsArray] = "colors"></app-child> -->
 
-  <app-child [employeeObject] = "employee"></app-child>
+  <!-- <app-child [employeeObject] = "employee"></app-child> -->
+  {{msg}}
+
+  <app-child2 (childEvent) = "msg = $event " ></app-child2>
