@@ -12,6 +12,7 @@ import { StructureDirectrivesComponent } from './structure-directrives/structure
 import { ChildComponent } from './child/child.component';
 import { Child2Component } from './child2/child2.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { DatePipeComponent } from './date-pipe/date-pipe.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PipeComponent } from './pipe/pipe.component';
     StructureDirectrivesComponent,
     ChildComponent,
     Child2Component,
-    PipeComponent
+    PipeComponent,
+    DatePipeComponent
   ],
   imports: [
     BrowserModule,
