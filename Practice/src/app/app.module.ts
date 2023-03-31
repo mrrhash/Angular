@@ -13,6 +13,7 @@ import { ChildComponent } from './child/child.component';
 import { Child2Component } from './child2/child2.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { DatePipeComponent } from './date-pipe/date-pipe.component';
+import { CustomPipe } from './custom-pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DatePipeComponent } from './date-pipe/date-pipe.component';
     ChildComponent,
     Child2Component,
     PipeComponent,
-    DatePipeComponent
+    DatePipeComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
