@@ -1,7 +1,21 @@
 <p>pipe works!</p>
 
-<h1>{{quote | uppercase}}</h1>
+<!-- <h1>{{quote | uppercase}}</h1>
 <h1>{{name | titlecase}}</h1>
 <h1>{{quote | lowercase}}</h1>
 <h1>{{quote | slice : 2 : 4}}</h1>
-<h1>{{obj | json}}</h1>
+<h1>{{obj | json}}</h1> -->
+
+
+<h1>{{ 0.25 | percent }}</h1>
+
+<h1>{{3.456 | number:'2.5-6'}}</h1>
+<h1>{{3.456 | number:'3.2-3'}}</h1>
+<h1>{{3.456 | number:'1.5-6'}}</h1>
+
+<h1>{{25 | currency}}</h1>
+<h1>{{25 | currency : 'EUR'}}</h1>
+<h1>{{25 | currency : 'GBP'}}</h1>
+<h1>{{25 | currency : 'GBP' : 'code'}}</h1>
+<h1>{{25 | currency : 'EUR' : 'symbol'}}</h1>
+<h1>{{25 | currency : 'EUR' : 'symbol' : '2.5-6'}}</h1>
