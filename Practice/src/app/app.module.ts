@@ -14,6 +14,9 @@ import { Child2Component } from './child2/child2.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { CustomPipe } from './custom-pipes/custom.pipe';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentDataComponent } from './student-data/student-data.component';
+import { StudentService } from './services/student.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,17 @@ import { CustomPipe } from './custom-pipes/custom.pipe';
     Child2Component,
     PipeComponent,
     DatePipeComponent,
-    CustomPipe
+    CustomPipe,
+    StudentListComponent,
+    StudentDataComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    StudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
