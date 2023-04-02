@@ -10,6 +10,14 @@ export class TempleteDrivenFormComponent {
 
   std = new Student();
 
+  /**
+   *
+   */
+  constructor() {
+    this.std.country="";
+
+  }
+
 save(formData:any){
 // console.log(formData);
 //console.log(formData.value);

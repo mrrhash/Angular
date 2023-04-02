@@ -71,6 +71,30 @@
            Enter Strong Password
           </div>
         </div>
+        <label for="">Gender</label>
+        <div class="form-check">
+            <input type="radio" name="gender" class="form-check-input" value="male"  required #gender="ngModel" [(ngModel)]="std.gender">
+            <label for="">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="gender" class="form-check-input" value="female" required #gender="ngModel" [(ngModel)]="std.gender">
+          <label for="">Female</label>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Country</label>
+        <select name="country" class="form-control" required [class.is-invalid]="country.touched && country.invalid" #country="ngModel" [(ngModel)]="std.country" >
+          <option value="" selected>Select</option>
+          <option value="USA">USA</option>
+          <option value="Germany">Germany</option>
+          <option value="England">England</option>
+        </select>
+      </div>
+      <div class="alert alert-danger" *ngIf="country.touched && country.invalid">
+        <div *ngIf="country.errors && country.errors['required']">
+          Country is required
+        </div>
+      </div>
         <br>
         <div class="d-grid">
           <input type="submit" [class.disabled] = "myForm.form.invalid" value="Submit" class="btn btn-warning">
