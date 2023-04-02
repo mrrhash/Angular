@@ -9,6 +9,7 @@ export class Student {
     public email?:string,
     public password?:string,
     public gender?:string,
-    public country?:string
+    public country?:string,
+    public accept?:boolean
   ) { }
  }

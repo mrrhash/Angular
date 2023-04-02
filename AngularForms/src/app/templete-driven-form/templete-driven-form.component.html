@@ -95,9 +95,27 @@
           Country is required
         </div>
       </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="check" required #accecpt="ngModel" [(ngModel)]="std.accept" id="">
+        <label for="">I Accept Terms & Conditions.</label>
+      </div>
+      <br>
+      <label for="">Select Hobbies</label>
+      <div class="form-check">
+        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="singing" id="">
+        <label for="">Singing</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="dancing" id="">
+        <label for="">Dancing</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="reading" id="">
+        <label for="">Reading</label>
+      </div>
         <br>
         <div class="d-grid">
-          <input type="submit" [class.disabled] = "myForm.form.invalid" value="Submit" class="btn btn-warning">
+          <input type="submit" [class.disabled] = "myForm.form.invalid || selectedHobbies.length == 0" value="Submit" class="btn btn-warning">
         </div>
           <br>
       </form>
