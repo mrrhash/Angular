@@ -13,19 +13,67 @@
         <hr>
         <div class="form-group">
           <label for="">Enter Your Name: </label>
-          <input type="text" [(ngModel)]="std.name" class="form-control"  name="name" id="" ngModel>
+          <input type="text" minlength="3" maxlength="12" [class.is-invalid]="name.touched && name.invalid" required #name = "ngModel" [(ngModel)]="std.name" class="form-control"  name="name" id="" >
         </div>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors && name.errors['required']">
+            Name is required
+          </div>
+          <div *ngIf="name.errors && name.errors['minlength']">
+            3 Characters Must
+          </div>
+        </div>
+        <!-- Touched = {{name.touched}}
+        <br />
+        Un-Touched = {{name.untouched}} -->
+        <!-- Valid = {{name.valid}}
+        <br />
+        Invalid = {{name.invalid}} -->
+        <!-- Dirty = {{name.dirty}}
+        <br />
+        Pristine = {{name.pristine}} -->
         <div class="form-group">
           <label for="">Enter Your Age: </label>
-          <input type="number" [(ngModel)]="std.age" class="form-control" name="age" id="" ngModel>
+          <input type="number" min="10" max="50" [class.is-invalid]="age.touched && age.invalid" required #age = "ngModel" [(ngModel)]="std.age" class="form-control" name="age" id="" >
+        </div>
+        <div class="alert alert-danger" *ngIf="age.touched && age.invalid">
+          <div *ngIf="age.errors && age.errors['required']">
+            Age is required
+          </div>
+          <div *ngIf="age.errors && age.errors['min']">
+            Age must be greater or equal to 10
+          </div>
+          <div *ngIf="age.errors && age.errors['max']">
+            Age must be lesser or equal to 50
+          </div>
         </div>
         <div class="form-group">
           <label for="">Enter Your Email: </label>
-          <input type="email" [(ngModel)]="std.email" class="form-control" name="email" id="" ngModel>
+          <input type="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" [class.is-invalid]="email.touched && email.invalid" required #email = "ngModel" [(ngModel)]="std.email" class="form-control" name="email" id="" >
+        </div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+          <div *ngIf="email.errors && email.errors['required']">
+            Email is required
+          </div>
+          <div *ngIf="email.errors && email.errors['pattern']">
+           Invalid Email
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Enter Your Password: </label>
+          <input type="text" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" [class.is-invalid]="pass.touched && pass.invalid" required #pass = "ngModel" [(ngModel)]="std.password" class="form-control" name="pass" id="" >
+        </div>
+        <div class="alert alert-danger" *ngIf="pass.touched && pass.invalid">
+          <div *ngIf="pass.errors && pass.errors['required']">
+            Password is required
+          </div>
+          <div *ngIf="pass.errors && pass.errors['pattern']">
+           Enter Strong Password
+          </div>
         </div>
         <br>
         <div class="d-grid">
-          <input type="submit" value="Submit" class="btn btn-warning">
+          <input type="submit" [class.disabled] = "myForm.form.invalid" value="Submit" class="btn btn-warning">
         </div>
           <br>
       </form>

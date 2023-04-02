@@ -8,7 +8,7 @@ import { Student } from '../student';
 })
 export class TempleteDrivenFormComponent {
 
-  std = new Student("Ali",22,"ali123@gmail.com");
+  std = new Student();
 
 save(formData:any){
 // console.log(formData);
