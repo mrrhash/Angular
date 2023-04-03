@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 text-white bg-secondary p-2">
-      <form #myForm="ngForm" (ngSubmit)="save(myForm)">
+      <form #myForm="ngForm" (ngSubmit)="save(myForm.value)">
         <div class="p-3 text-center text-white">
           <h2>Template Driven Form</h2>
         </div>
@@ -102,20 +102,22 @@
       <br>
       <label for="">Select Hobbies</label>
       <div class="form-check">
-        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="singing" id="">
+        <input type="checkbox" ngModel (change)="onChange($event)" name="singing" class="form-check-input" value="singing" id="">
         <label for="">Singing</label>
       </div>
       <div class="form-check">
-        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="dancing" id="">
+        <input type="checkbox" ngModel (change)="onChange($event)" name="dancing" class="form-check-input" value="dancing" id="">
         <label for="">Dancing</label>
       </div>
       <div class="form-check">
-        <input type="checkbox" (change)="onChange($event)" class="form-check-input" value="reading" id="">
+        <input type="checkbox" ngModel (change)="onChange($event)" name="reading" class="form-check-input" value="reading" id="">
         <label for="">Reading</label>
       </div>
         <br>
         <div class="d-grid">
           <input type="submit" [class.disabled] = "myForm.form.invalid || selectedHobbies.length == 0" value="Submit" class="btn btn-warning">
+          <br>
+          <button type="button" class="btn btn-danger" (click)="resetForm(myForm)"> Reset Form </button>
         </div>
           <br>
       </form>

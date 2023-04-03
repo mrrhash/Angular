@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Student } from '../student';
 
 @Component({
@@ -7,6 +8,10 @@ import { Student } from '../student';
   styleUrls: ['./templete-driven-form.component.css']
 })
 export class TempleteDrivenFormComponent {
+
+  resetForm(myfrom:NgForm){
+    myfrom.resetForm();
+  }
 
   std = new Student();
   selectedHobbies: string[]=[];
@@ -37,5 +42,6 @@ save(formData:any){
 // console.log(std);
 console.log(this.std);
 console.log(this.selectedHobbies);
+//formData.reset();
 }
 }
