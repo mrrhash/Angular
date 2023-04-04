@@ -5,19 +5,97 @@
       <form [formGroup]="signUpForm" (ngSubmit)="formHandler()">
         <div class="form-group">
           <label for="">Enter Your Name:</label>
-          <input type="text" name="name" class="form-control" formControlName="name">
+          <input type="text" name="name" [class.is-invalid] = "form['name'].invalid && form['name'].touched" class="form-control" formControlName="name">
+        </div>
+        <div class="alert alert-danger" *ngIf="form['name'].invalid && form['name'].touched">
+            <div *ngIf="form['name'].errors && form['name'].errors['required']">
+                Name is required!
+            </div>
+            <div *ngIf="form['name'].errors && form['name'].errors['minlength']">
+             3 Characters Must
+            </div>
+            <div *ngIf="form['name'].errors && form['name'].errors['maxlength']">
+            20 Characters Maximum
+           </div>
         </div>
         <div class="form-group">
           <label for="">Enter Your Age:</label>
-          <input type="number" name="age" class="form-control" formControlName="age">
+          <input type="number" name="age"  [class.is-invalid] = "form['age'].invalid && form['age'].touched" class="form-control" formControlName="age">
         </div>
+        <div class="alert alert-danger" *ngIf="form['age'].invalid && form['age'].touched">
+          <div *ngIf="form['age'].errors && form['age'].errors['required']">
+              Age is required!
+          </div>
+          <div *ngIf="form['age'].errors && form['age'].errors['min']">
+            Minimum Age is 10
+         </div>
+         <div *ngIf="form['age'].errors && form['age'].errors['max']">
+           Maximum Age is 50
+       </div>
+      </div>
         <div class="form-group">
           <label for="">Enter Your Email:</label>
-          <input type="text" name="email" class="form-control" formControlName="email">
+          <input type="text" name="email"  [class.is-invalid] = "form['email'].invalid && form['email'].touched" class="form-control" formControlName="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="form['email'].invalid && form['email'].touched">
+          <div *ngIf="form['email'].errors && form['email'].errors['required']">
+              Email is required!
+          </div>
+          <div *ngIf="form['email'].errors && form['email'].errors['pattern']">
+            Inavlid Email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Enter Your Password:</label>
+        <input type="text" name="pass"  [class.is-invalid] = "form['pass'].invalid && form['pass'].touched" class="form-control" formControlName="pass">
+      </div>
+      <div class="alert alert-danger" *ngIf="form['pass'].invalid && form['pass'].touched">
+        <div *ngIf="form['pass'].errors && form['pass'].errors['required']">
+            Password is required!
+        </div>
+        <div *ngIf="form['pass'].errors && form['pass'].errors['pattern']">
+          Please Enter Strong Password!
+        </div>
+      </div>
+      <label for="">Gender:</label>
+      <div class="form-check">
+        <input type="radio" name="gender" formControlName="gender" class="form-check-input" value="male" >
+        <label > Male</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="gender" formControlName="gender" class="form-check-input" value="female" >
+        <label > Female</label>
+      </div>
+      <div class="form-group">
+        <label for="">Country:</label>
+        <select name="country" formControlName="country" [class.is-invalid]="form['country'].invalid && form['country'].touched" class="form-control">
+          <option value="">Select</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="France">France</option>
+        </select>
+      </div>
+      <div class="alert alert-danger" *ngIf="form['country'].invalid && form['country'].touched">
+        <div *ngIf="form['country'].errors && form['country'].errors['required']">
+          Country is required!
+      </div>
+      </div>
+      <br>
+      <label for="">Hobbies:</label>
+      <div class="form-check" *ngFor="let hobby of hobbiesArray,let i = index;">
+        <label for="">
+          <input type="checkbox" name="hobbies" (change)="onChange($event)" value={{hobby}} class="form-check-input">
+          {{hobby}}
+        </label>
+      </div>
+        <br>
+        <div class="form-check">
+          <input type="checkbox" name="accept" class="form-check-input" formControlName="accept">
+          <label > I Accept Terms & Conditions.</label>
         </div>
         <br>
-        <div class="d-grid">
-          <input type="submit" value="Submit" class="btn btn-secondary">
+      <div class="d-grid">
+          <input type="submit" [class.disabled] = "signUpForm.invalid" value="Submit" class="btn btn-secondary">
         </div>
       </form>
     </div>
