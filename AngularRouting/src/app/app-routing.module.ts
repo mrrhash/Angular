@@ -1,3 +1,5 @@
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'about', component: AboutComponent},
   {path:'contact', component: ContactComponent},
+  {path:'employees', component: EmployeeListComponent},
+  {path:'employees/:id', component: EmployeeDetailsComponent},
   {path:"**" , component: PageNotFoundComponent}//it must be in the end of the route
 ];
 

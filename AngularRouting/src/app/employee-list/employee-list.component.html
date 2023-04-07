@@ -1,0 +1,6 @@
+<h1>Employee List</h1>
+<ul class="list-group">
+  <li (click)='EmpClick(employee)' class="list-group-item text-white bg-secondary" *ngFor="let employee of myEmployees">
+    {{employee.id}} --  {{employee.name}}
+  </li>
+</ul>
