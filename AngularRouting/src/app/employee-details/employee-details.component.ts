@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployeeDetailsComponent {
  EmpID :any;
+ EmpName :any;
   /**
    *
    */
@@ -15,6 +16,8 @@ export class EmployeeDetailsComponent {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
+    let name = this.route.snapshot.paramMap.get('name');
     this.EmpID = id;
+    this.EmpName = name;
   }
 }
