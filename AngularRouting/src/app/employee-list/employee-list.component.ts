@@ -22,7 +22,7 @@ export class EmployeeListComponent {
 constructor(private router : Router) {}
 
   EmpClick(employee : any){
-    this.router.navigate(['/employees',employee.id,employee.name]);
+    this.router.navigate(['/employees',employee.id]);
   }
 
 }
