@@ -1,0 +1,16 @@
+<h1>All Products Will Display Here....</h1>
+
+<br>
+
+<h5>Method 1</h5>
+<button routerLink="tshirts" class="btn btn-warning">Tshirts</button>
+&nbsp;
+<button routerLink="trousers" class="btn btn-primary">Trousers</button>
+<br>
+
+<h5>Method 2</h5>
+<button (click)="showShirts()" class="btn btn-warning">Tshirts</button>
+&nbsp;
+<button (click)="showTrousers()" class="btn btn-primary">Trousers</button>
+
+<router-outlet></router-outlet>

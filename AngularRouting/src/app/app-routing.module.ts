@@ -6,12 +6,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductsComponent } from './products/products.component';
+import { TshirtsComponent } from './tshirts/tshirts.component';
+import { TrousersComponent } from './trousers/trousers.component';
 
 const routes: Routes = [
   //{path:'', component: HomeComponent},// not a good practice
   //{path:'',redirectTo:'/home', pathMatch:'prefix'},//prefix means just start of the route shohld be empty
   {path:'',redirectTo:'/home', pathMatch:'full'},//full means when whole route shohld is empty
   {path:'home', component: HomeComponent},
+  {
+    path:'products',
+    component: ProductsComponent,
+    children:[
+      {path:'tshirts' , component: TshirtsComponent},
+      {path:'trousers' , component: TrousersComponent},
+    ]
+  },
   {path:'about', component: AboutComponent},
   {path:'contact', component: ContactComponent},
   {path:'employees', component: EmployeeListComponent},
