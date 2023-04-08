@@ -25,10 +25,14 @@ export class EmployeeDetailsComponent {
 
   PreviousEmp(){
     let previousId = parseInt(this.EmpID) - 1;
-    this.router.navigate(['employees',previousId]);
+    this.router.navigate(['/employees',previousId]);
   }
   NextEmp(){
     let nextId = parseInt(this.EmpID) + 1;
-    this.router.navigate(['employees',nextId]);
+    this.router.navigate(['/employees',nextId]);
+  }
+  ClickEmployee(){
+    let selectedId = this.EmpID;
+    this.router.navigate(['/employees',{id:selectedId}]);
   }
 }

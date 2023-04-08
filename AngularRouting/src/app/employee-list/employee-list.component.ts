@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent {
 
+   selectedId : any;
   myEmployees = [
     {id : 0 , name : 'Hassan'},
     {id : 1 , name : 'Ahsan'},
@@ -19,10 +20,18 @@ export class EmployeeListComponent {
 /**
  *
  */
-constructor(private router : Router) {}
+constructor(private router : Router , private route : ActivatedRoute) {}
 
   EmpClick(employee : any){
     this.router.navigate(['/employees',employee.id]);
   }
-
+  ngOnInit(){
+    this.route.paramMap.subscribe((params : ParamMap)=>{
+      let id = params.get('id');
+      this.selectedId = id;
+    })
+  }
+  isSelected(employee : any){
+    return parseInt(employee.id) === parseInt(this.selectedId);
+  }
 }
