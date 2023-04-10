@@ -18,6 +18,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDataComponent } from './student-data/student-data.component';
 import { StudentService } from './services/student.service';
 import { ChangeMeDirective } from './shared/change-me.directive';
+import { NgTempleteComponent } from './ng-templete/ng-templete.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ChangeMeDirective } from './shared/change-me.directive';
     CustomPipe,
     StudentListComponent,
     StudentDataComponent,
-    ChangeMeDirective
+    ChangeMeDirective,
+    NgTempleteComponent
   ],
   imports: [
     BrowserModule,

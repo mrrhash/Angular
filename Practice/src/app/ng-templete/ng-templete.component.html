@@ -1,0 +1,45 @@
+<!-- <ng-template [ngIf]="myVar">
+  Never Give Up
+</ng-template>
+
+<div *ngIf="myVar">
+  Hassan Raza
+</div> -->
+
+<!-- <ng-template #elsepart [ngIf]="myVar">
+  Never Give Up
+</ng-template>
+
+<div *ngIf="myVar ; else elsepart">
+  Hassan Raza
+</div> -->
+
+<!-- <div *ngFor="let a of array; let i = index;">
+  {{a.name}} -- {{a.age}} -- {{a.gender}}
+</div>
+
+<ng-template ngFor let-a [ngForOf]="array" let-i = "index" >
+ index {{i}} -- {{a.name}} -- {{a.age}} -- {{a.gender}} <br>
+</ng-template> -->
+
+<div [ngSwitch]="Course">
+  <h5 *ngSwitchCase="'java'">Java Course</h5>
+  <h5 *ngSwitchCase="'Javascript'">Javascript Course</h5>
+  <h5 *ngSwitchCase="'angular'">Angular Course</h5>
+  <h5 *ngSwitchDefault>Html</h5>
+</div>
+
+<div [ngSwitch]="Course">
+  <ng-template [ngSwitchCase]="'Angular'">
+    <p> Angular Course</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'Javascript'">
+    <p> Javascript Course</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'Java'">
+    <p> Java Course</p>
+  </ng-template>
+  <ng-template [ngSwitchDefault] >
+    <p>Html</p>
+  </ng-template>
+</div>
